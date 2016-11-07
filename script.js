@@ -1,4 +1,4 @@
-var sensor = new AmbientLightSensor({ frequency : 60 });
+var sensor = new AmbientLightSensor();
 sensor.start();
 sensor.onerror = function(error) {
     console.log(error);
