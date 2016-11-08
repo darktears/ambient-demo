@@ -6,11 +6,11 @@ sensor.onerror = function(error) {
 sensor.onstatechange = function(e) {
     console.log(e)
 };
-sensor.onchange = function(e) {
+sensor.onchange = function() {
     var light = document.getElementById('light');
-    light.innerHTML = e.reading.illuminance + "<br> Event time stamp : " + e.reading.timeStamp + " Now timestamp : " + window.performance.now();
+    light.innerHTML = sensor.reading.illuminance + "<br> Event time stamp : " + sensor.reading.timeStamp + " Now timestamp : " + window.performance.now();
     var body = document.getElementById('body');
-    if (e.reading.illuminance < 30) {
+    if (sensor.reading.illuminance < 30) {
         body.style.background = 'black';
         body.style.color = 'white';
     } else {
